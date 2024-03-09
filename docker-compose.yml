@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  api-database:
+    image: "mongo:latest"
+    restart: always
+    ports:
+      - "27017:27027"  # Assurez-vous que les ports correspondent
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=example
+    hostname: mongodb  # Définition du nom d'hôte
