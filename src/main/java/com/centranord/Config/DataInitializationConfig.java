@@ -1,5 +1,5 @@
 
-
+/*
 package com.centranord.Config;
 
 import com.centranord.Entity.Role;
@@ -108,7 +108,7 @@ public class DataInitializationConfig {
     }
 
 
-
+*/
 
 
 
