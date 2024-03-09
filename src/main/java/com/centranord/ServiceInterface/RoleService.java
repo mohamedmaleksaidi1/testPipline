@@ -13,6 +13,5 @@ public interface RoleService {
     List<Permission> getAllPermissions();
     Permission createPermission(String resourceName, ActionPermission action);
 
-     Role updateRole(String roleId, CreateRoleAndAssignPermissionsRequest updateRoleRequest);
-     void deleteRoleById(String roleId);
+
 }

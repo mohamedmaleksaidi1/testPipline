@@ -76,10 +76,12 @@ public class DataInitializationConfig {
                     permissionRepository.save(permission);
                 }
             });
-
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Entrez le nom du rôle : ");
+            String roleName = scanner.nextLine();
 
             Role role = new Role();
-            role.setName("superAdmin");
+            role.setName(roleName);
             role.setName("ROLE_ADMIN");
             List<Permission> allPermissions = permissionRepository.findAll();
 

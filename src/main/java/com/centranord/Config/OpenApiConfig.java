@@ -18,7 +18,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
                         url = "https://aliboucoding.com/course"
                 ),
                 description = "OpenApi documentation for Spring Security",
-                title = "OpenApi specification",
+                title = "OpenApi specification - Alibou",
                 version = "1.0",
                 license = @License(
                         name = "Licence name",
@@ -29,7 +29,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
         servers = {
                 @Server(
                         description = "Local ENV",
-                        url = "http://localhost:9000"
+                        url = "http://localhost:8080"
                 ),
                 @Server(
                         description = "PROD ENV",

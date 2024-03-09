@@ -1,11 +1,34 @@
-version: "3.7"
+version: '3'
 services:
-  api-database:
-    image: "mongo:latest"
-    restart: always
+  maven-build:
+    image: maven:latest
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: mvn install
+
+  spring-app:
+    image: openjdk:17
     ports:
-      - "27017:27027"  # Assurez-vous que les ports correspondent
+      - "8080:8080"
+    volumes:
+      - ./target/centranord-api.jar:/centranord-api.jar
+    command: java -jar centranord-api.jar
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+
+  mongodb-express:
+    image: mongo-express:latest
+    ports:
+      - "8081:8081"
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=example
-    hostname: mongodb  # Définition du nom d'hôte
+      ME_CONFIG_MONGODB_SERVER: mongodb
+      ME_CONFIG_BASICAUTH_USERNAME: malek
+      ME_CONFIG_BASICAUTH_PASSWORD: saidi
+
+
+
+

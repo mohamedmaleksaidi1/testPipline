@@ -71,34 +71,4 @@ public class RoleServiceImp  implements RoleService {
         return permissionRepository.save(permission);
     }
 
-
-
-    @Override
-    public Role updateRole(String roleId, CreateRoleAndAssignPermissionsRequest updateRoleRequest) {
-        Role existingRole = roleRepository.findById(roleId)
-                .orElseThrow(() -> new NotFoundException("Role not found with id: " + roleId));
-
-        existingRole.setName(updateRoleRequest.getRoleName());
-
-        Set<Permission> permissions = new HashSet<>();
-        for (String permissionId : updateRoleRequest.getPermissionIds()) {
-            Optional<Permission> optionalPermission = permissionRepository.findById(permissionId);
-            if (optionalPermission.isPresent()) {
-                permissions.add(optionalPermission.get());
-            } else {
-                throw new NotFoundException("Permission not found with id: " + permissionId);
-            }
-        }
-        existingRole.setPermissions(permissions);
-
-        return roleRepository.save(existingRole);
-    }
-    @Override
-    public void deleteRoleById(String roleId) {
-        Role roleToDelete = roleRepository.findById(roleId)
-                .orElseThrow(() -> new NotFoundException("Role not found with id: " + roleId));
-
-        roleRepository.delete(roleToDelete);
-    }
-
 }

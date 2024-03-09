@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1/Email")
 public class EmailController {
     @GetMapping
-
+    @PreAuthorize("hasAuthority('Email:read')")
     public String get() {
         return "GET:: Composant_controllerEmail";
     }

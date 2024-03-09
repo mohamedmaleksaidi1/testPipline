@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.centranord</groupId>
 	<artifactId>centranord</artifactId>
-
+	<version>0.0.1-SNAPSHOT</version>
 	<name>centranord</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -47,13 +47,10 @@
 			<artifactId>jjwt-jackson</artifactId>
 			<version>0.11.5</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-mongodb -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-mongodb</artifactId>
-			<version>3.2.3</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
@@ -69,19 +66,6 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
-
-		<dependency>
-			<groupId>org.mongodb</groupId>
-			<artifactId>mongodb-driver-core</artifactId>
-			<version>4.11.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<version>3.2.2</version>
-		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -109,8 +93,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>centranord</finalName>
-
+		<finalName>centranord-api</finalName>
 	</build>
 
 </project>

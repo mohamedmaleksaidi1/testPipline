@@ -1,5 +1,4 @@
 package com.centranord.Config;
-import com.mongodb.MongoSocketOpenException;
 import io.jsonwebtoken.ExpiredJwtException;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
@@ -57,12 +56,5 @@ public class GlobalExceptionHandler  extends ResponseEntityExceptionHandler {
     public ResponseEntity<Object> handleInternalAuthenticationServiceException(InternalAuthenticationServiceException ex, WebRequest request) {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erreur interne du service d'authentification.");
     }
-
-    @ExceptionHandler(MongoSocketOpenException.class)
-    public void handleMongoSocketOpenException(MongoSocketOpenException ex) {
-        // Do nothing here
-    }
-
-
 
 }

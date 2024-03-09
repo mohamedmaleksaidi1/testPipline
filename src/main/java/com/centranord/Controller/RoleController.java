@@ -60,16 +60,6 @@ public class RoleController {
         Permission savedPermission = roleService.createPermission(resourceName, action);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedPermission);
     }
-    @PatchMapping("/{roleId}")
-    public ResponseEntity<Role> updateRole(@PathVariable String roleId, @RequestBody CreateRoleAndAssignPermissionsRequest updateRoleRequest) {
-        Role updatedRole = roleService.updateRole(roleId, updateRoleRequest);
-        return ResponseEntity.ok(updatedRole);
-    }
 
-    @DeleteMapping("/{roleId}")
-    public ResponseEntity<?> deleteRole(@PathVariable String roleId) {
-        roleService.deleteRoleById(roleId);
-        return ResponseEntity.ok().build();
-    }
 
 }
