@@ -1,5 +1,6 @@
 package com.centranord.DTO;
 
+import com.centranord.Enum.ActionPermission;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

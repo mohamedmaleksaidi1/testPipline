@@ -113,7 +113,6 @@ public class AuthentificationServiceImp implements AuthenticationService, Logout
                 .refreshToken(refreshToken)
                 .role(userRole)
                 .permissions(permissionNames)
-                .permissionActions(permissionActions)
                 .build();
     }
 

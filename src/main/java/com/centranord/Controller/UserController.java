@@ -123,7 +123,7 @@ public class UserController {
     public ResponseEntity<String> deleteUserById(@PathVariable String userId) {
         try {
             userService.deleteUserById(userId);
-            return ResponseEntity.ok().body("utilisateur supprimé avec succès.");
+            return ResponseEntity.ok().body("Utilisateur supprimé avec succès.");
         } catch (UserNotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         } catch (Exception e) {
